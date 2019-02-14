@@ -1,0 +1,474 @@
+                List of relations
+ Schema |        Name         | Type  |  Owner
+--------+---------------------+-------+----------
+ public | allstarfull         | table | baseball
+ public | appearances         | table | baseball
+ public | awardsmanagers      | table | baseball
+ public | awardsplayers       | table | baseball
+ public | awardssharemanagers | table | baseball
+ public | awardsshareplayers  | table | baseball
+ public | batting             | table | baseball
+ public | battingpost         | table | baseball
+ public | collegeplaying      | table | baseball
+ public | fielding            | table | baseball
+ public | fieldingof          | table | baseball
+ public | fieldingofsplit     | table | baseball
+ public | fieldingpost        | table | baseball
+ public | halloffame          | table | baseball
+ public | homegames           | table | baseball
+ public | managers            | table | baseball
+ public | managershalf        | table | baseball
+ public | master              | table | baseball
+ public | parks               | table | baseball
+ public | pitching            | table | baseball
+ public | pitchingpost        | table | baseball
+ public | salaries            | table | baseball
+ public | schools             | table | baseball
+ public | seriespost          | table | baseball
+ public | teams               | table | baseball
+ public | teamsfranchises     | table | baseball
+ public | teamshalf           | table | baseball
+
+            Table "public.allstarfull"
+   Column    |          Type          | Modifiers
+-------------+------------------------+-----------
+ playerid    | character varying(255) |
+ yearid      | bigint                 |
+ gamenum     | bigint                 |
+ gameid      | character varying(255) |
+ teamid      | character varying(255) |
+ lgid        | character varying(255) |
+ gp          | bigint                 |
+ startingpos | character varying(255) |
+
+           Table "public.appearances"
+  Column   |          Type          | Modifiers
+-----------+------------------------+-----------
+ yearid    | bigint                 |
+ teamid    | character varying(255) |
+ lgid      | character varying(255) |
+ playerid  | character varying(255) |
+ g_all     | bigint                 |
+ gs        | character varying(255) |
+ g_batting | bigint                 |
+ g_defense | bigint                 |
+ g_p       | bigint                 |
+ g_c       | bigint                 |
+ g_1b      | bigint                 |
+ g_2b      | bigint                 |
+ g_3b      | bigint                 |
+ g_ss      | bigint                 |
+ g_lf      | bigint                 |
+ g_cf      | bigint                 |
+ g_rf      | bigint                 |
+ g_of      | bigint                 |
+ g_dh      | character varying(255) |
+ g_ph      | character varying(255) |
+ g_pr      | character varying(255) |
+
+         Table "public.awardsmanagers"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ awardid  | character varying(255) |
+ yearid   | bigint                 |
+ lgid     | character varying(255) |
+ tie      | character varying(255) |
+ notes    | character varying(255) |
+
+         Table "public.awardsplayers"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ awardid  | character varying(255) |
+ yearid   | bigint                 |
+ lgid     | character varying(255) |
+ tie      | character varying(255) |
+ notes    | character varying(255) |
+
+       Table "public.awardssharemanagers"
+   Column   |          Type          | Modifiers
+------------+------------------------+-----------
+ awardid    | character varying(255) |
+ yearid     | bigint                 |
+ lgid       | character varying(255) |
+ playerid   | character varying(255) |
+ pointswon  | bigint                 |
+ pointsmax  | bigint                 |
+ votesfirst | bigint                 |
+
+        Table "public.awardsshareplayers"
+   Column   |          Type          | Modifiers
+------------+------------------------+-----------
+ awardid    | character varying(255) |
+ yearid     | bigint                 |
+ lgid       | character varying(255) |
+ playerid   | character varying(255) |
+ pointswon  | bigint                 |
+ pointsmax  | bigint                 |
+ votesfirst | bigint                 |
+
+            Table "public.batting"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ yearid   | bigint                 |
+ stint    | bigint                 |
+ teamid   | character varying(255) |
+ lgid     | character varying(255) |
+ g        | bigint                 |
+ ab       | bigint                 |
+ r        | bigint                 |
+ h        | bigint                 |
+ 2B       | bigint                 |
+ 3B       | bigint                 |
+ hr       | bigint                 |
+ rbi      | bigint                 |
+ sb       | bigint                 |
+ cs       | bigint                 |
+ bb       | bigint                 |
+ so       | bigint                 |
+ ibb      | character varying(255) |
+ hbp      | character varying(255) |
+ sh       | character varying(255) |
+ sf       | character varying(255) |
+ gidp     | character varying(255) |
+
+          Table "public.battingpost"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ yearid   | bigint                 |
+ round    | character varying(255) |
+ playerid | character varying(255) |
+ teamid   | character varying(255) |
+ lgid     | character varying(255) |
+ g        | bigint                 |
+ ab       | bigint                 |
+ r        | bigint                 |
+ h        | bigint                 |
+ 2B       | bigint                 |
+ 3B       | bigint                 |
+ hr       | bigint                 |
+ rbi      | bigint                 |
+ sb       | bigint                 |
+ cs       | character varying(255) |
+ bb       | bigint                 |
+ so       | bigint                 |
+ ibb      | bigint                 |
+ hbp      | character varying(255) |
+ sh       | character varying(255) |
+ sf       | character varying(255) |
+ gidp     | character varying(255) |
+
+         Table "public.collegeplaying"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ schoolid | character varying(255) |
+ yearid   | bigint                 |
+
+            Table "public.fielding"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ yearid   | bigint                 |
+ stint    | bigint                 |
+ teamid   | character varying(255) |
+ lgid     | character varying(255) |
+ pos      | character varying(255) |
+ g        | bigint                 |
+ gs       | character varying(255) |
+ innouts  | character varying(255) |
+ po       | bigint                 |
+ a        | bigint                 |
+ e        | bigint                 |
+ dp       | bigint                 |
+ pb       | character varying(255) |
+ wp       | character varying(255) |
+ sb       | character varying(255) |
+ cs       | character varying(255) |
+ zr       | character varying(255) |
+
+           Table "public.fieldingof"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ yearid   | bigint                 |
+ stint    | bigint                 |
+ glf      | bigint                 |
+ gcf      | bigint                 |
+ grf      | bigint                 |
+
+        Table "public.fieldingofsplit"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ yearid   | bigint                 |
+ stint    | bigint                 |
+ teamid   | character varying(255) |
+ lgid     | character varying(255) |
+ pos      | character varying(255) |
+ g        | bigint                 |
+ gs       | bigint                 |
+ innouts  | bigint                 |
+ po       | bigint                 |
+ a        | bigint                 |
+ e        | bigint                 |
+ dp       | bigint                 |
+ pb       | character varying(255) |
+ wp       | character varying(255) |
+ sb       | character varying(255) |
+ cs       | character varying(255) |
+ zr       | character varying(255) |
+
+          Table "public.fieldingpost"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ yearid   | bigint                 |
+ teamid   | character varying(255) |
+ lgid     | character varying(255) |
+ round    | character varying(255) |
+ pos      | character varying(255) |
+ g        | bigint                 |
+ gs       | bigint                 |
+ innouts  | bigint                 |
+ po       | bigint                 |
+ a        | bigint                 |
+ e        | bigint                 |
+ dp       | bigint                 |
+ tp       | bigint                 |
+ pb       | character varying(255) |
+ sb       | character varying(255) |
+ cs       | character varying(255) |
+
+            Table "public.halloffame"
+   Column    |          Type          | Modifiers
+-------------+------------------------+-----------
+ playerid    | character varying(255) |
+ yearid      | bigint                 |
+ votedby     | character varying(255) |
+ ballots     | bigint                 |
+ needed      | bigint                 |
+ votes       | bigint                 |
+ inducted    | character varying(255) |
+ category    | character varying(255) |
+ needed_note | character varying(255) |
+
+            Table "public.homegames"
+   Column   |          Type          | Modifiers
+------------+------------------------+-----------
+ year.key   | bigint                 |
+ league.key | character varying(255) |
+ team.key   | character varying(255) |
+ park.key   | character varying(255) |
+ span.first | character varying(255) |
+ span.last  | character varying(255) |
+ games      | bigint                 |
+ openings   | bigint                 |
+ attendance | bigint                 |
+
+            Table "public.managers"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ yearid   | bigint                 |
+ teamid   | character varying(255) |
+ lgid     | character varying(255) |
+ inseason | bigint                 |
+ g        | bigint                 |
+ w        | bigint                 |
+ l        | bigint                 |
+ rank     | bigint                 |
+ plyrmgr  | character varying(255) |
+
+          Table "public.managershalf"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ yearid   | bigint                 |
+ teamid   | character varying(255) |
+ lgid     | character varying(255) |
+ inseason | bigint                 |
+ half     | bigint                 |
+ g        | bigint                 |
+ w        | bigint                 |
+ l        | bigint                 |
+ rank     | bigint                 |
+
+               Table "public.master"
+    Column    |          Type          | Modifiers
+--------------+------------------------+-----------
+ playerid     | character varying(255) |
+ birthyear    | bigint                 |
+ birthmonth   | bigint                 |
+ birthday     | bigint                 |
+ birthcountry | character varying(255) |
+ birthstate   | character varying(255) |
+ birthcity    | character varying(255) |
+ deathyear    | character varying(255) |
+ deathmonth   | character varying(255) |
+ deathday     | character varying(255) |
+ deathcountry | character varying(255) |
+ deathstate   | character varying(255) |
+ deathcity    | character varying(255) |
+ namefirst    | character varying(255) |
+ namelast     | character varying(255) |
+ namegiven    | character varying(255) |
+ weight       | bigint                 |
+ height       | bigint                 |
+ bats         | character varying(255) |
+ throws       | character varying(255) |
+ debut        | character varying(255) |
+ finalgame    | character varying(255) |
+ retroid      | character varying(255) |
+ bbrefid      | character varying(255) |
+
+              Table "public.parks"
+   Column   |          Type          | Modifiers
+------------+------------------------+-----------
+ park.key   | character varying(255) |
+ park.name  | character varying(255) |
+ park.alias | character varying(255) |
+ city       | character varying(255) |
+ state      | character varying(255) |
+ country    | character varying(255) |
+
+            Table "public.pitching"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ playerid | character varying(255) |
+ yearid   | bigint                 |
+ stint    | bigint                 |
+ teamid   | character varying(255) |
+ lgid     | character varying(255) |
+ w        | bigint                 |
+ l        | bigint                 |
+ g        | bigint                 |
+ gs       | bigint                 |
+ cg       | bigint                 |
+ sho      | bigint                 |
+ sv       | bigint                 |
+ ipouts   | bigint                 |
+ h        | bigint                 |
+ er       | bigint                 |
+ hr       | bigint                 |
+ bb       | bigint                 |
+ so       | bigint                 |
+ baopp    | character varying(255) |
+ era      | double precision       |
+ ibb      | character varying(255) |
+ wp       | character varying(255) |
+ hbp      | character varying(255) |
+ bk       | bigint                 |
+ bfp      | character varying(255) |
+ gf       | character varying(255) |
+ r        | bigint                 |
+ sh       | character varying(255) |
+ sf       | character varying(255) |
+ gidp     | character varying(255) |
+
+            Table "public.salaries"
+  Column  |          Type          | Modifiers
+----------+------------------------+-----------
+ yearid   | bigint                 |
+ teamid   | character varying(255) |
+ lgid     | character varying(255) |
+ playerid | character varying(255) |
+ salary   | bigint                 |
+
+             Table "public.schools"
+  Column   |          Type          | Modifiers
+-----------+------------------------+-----------
+ schoolid  | character varying(255) |
+ name_full | character varying(255) |
+ city      | character varying(255) |
+ state     | character varying(255) |
+ country   | character varying(255) |
+
+             Table "public.seriespost"
+    Column    |          Type          | Modifiers
+--------------+------------------------+-----------
+ yearid       | bigint                 |
+ round        | character varying(255) |
+ teamidwinner | character varying(255) |
+ lgidwinner   | character varying(255) |
+ teamidloser  | character varying(255) |
+ lgidloser    | character varying(255) |
+ wins         | bigint                 |
+ losses       | bigint                 |
+ ties         | bigint                 |
+
+                Table "public.teams"
+     Column     |          Type          | Modifiers
+----------------+------------------------+-----------
+ yearid         | bigint                 |
+ lgid           | character varying(255) |
+ teamid         | character varying(255) |
+ franchid       | character varying(255) |
+ divid          | character varying(255) |
+ rank           | bigint                 |
+ g              | bigint                 |
+ ghome          | character varying(255) |
+ w              | bigint                 |
+ l              | bigint                 |
+ divwin         | character varying(255) |
+ wcwin          | character varying(255) |
+ lgwin          | character varying(255) |
+ wswin          | character varying(255) |
+ r              | bigint                 |
+ ab             | bigint                 |
+ h              | bigint                 |
+ 2B             | bigint                 |
+ 3B             | bigint                 |
+ hr             | bigint                 |
+ bb             | bigint                 |
+ so             | bigint                 |
+ sb             | bigint                 |
+ cs             | character varying(255) |
+ hbp            | character varying(255) |
+ sf             | character varying(255) |
+ ra             | bigint                 |
+ er             | bigint                 |
+ era            | double precision       |
+ cg             | bigint                 |
+ sho            | bigint                 |
+ sv             | bigint                 |
+ ipouts         | bigint                 |
+ ha             | bigint                 |
+ hra            | bigint                 |
+ bba            | bigint                 |
+ soa            | bigint                 |
+ e              | bigint                 |
+ dp             | character varying(255) |
+ fp             | double precision       |
+ name           | character varying(255) |
+ park           | character varying(255) |
+ attendance     | character varying(255) |
+ bpf            | bigint                 |
+ ppf            | bigint                 |
+ teamidbr       | character varying(255) |
+ teamidlahman45 | character varying(255) |
+ teamidretro    | character varying(255) |
+
+        Table "public.teamsfranchises"
+   Column   |          Type          | Modifiers
+------------+------------------------+-----------
+ franchid   | character varying(255) |
+ franchname | character varying(255) |
+ active     | character varying(255) |
+ naassoc    | character varying(255) |
+
+        Table "public.teamshalf"
+ Column |          Type          | Modifiers
+--------+------------------------+-----------
+ yearid | bigint                 |
+ lgid   | character varying(255) |
+ teamid | character varying(255) |
+ half   | bigint                 |
+ divid  | character varying(255) |
+ divwin | character varying(255) |
+ rank   | bigint                 |
+ g      | bigint                 |
+ w      | bigint                 |
+ l      | bigint                 |
